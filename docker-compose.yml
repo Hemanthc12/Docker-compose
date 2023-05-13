@@ -1,0 +1,19 @@
+version: '2'
+services:
+  jenkins:
+    image: hemanthc12/jenkins
+    container_name: jenkins
+    ports:
+     - "9090:8080"
+    networks:
+      - My_netk
+  tomcat:
+    image: "hemanthc12/tomcat"
+    container_name: tomcat
+    ports:
+     - "9091:8080"
+    networks:
+      - My_netk
+networks:
+  My_netk:
+    driver: bridge
