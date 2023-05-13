@@ -14,6 +14,15 @@ services:
      - "9091:8080"
     networks:
       - My_netk
+  sonarqube:
+    image: "hemanthc12/sonarqube"
+    container_name: sonarqube
+    ports:
+     - "9092:9000"
+    networks:
+      - My_netk
 networks:
   My_netk:
     driver: bridge
+
+    /opt/sonar9/bin/linux-x86-64/sonar.sh start
